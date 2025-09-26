@@ -1,0 +1,37 @@
+<?php
+
+require_once 'config/config.php';
+
+    class Db {
+
+        private $host;
+        private $db;
+        private $user;
+        private $pass;
+        public $conection;
+
+        public function __construct() {		
+
+            $this->host = constant('DB_HOST');
+            $this->db = constant('DB');
+            $this->user = constant('DB_USER');
+            $this->pass = constant('DB_PASS');
+
+            $this->conection = new mysqli($this->host, $this->user, $this->pass, $this->db);
+
+            if ($this->conection->connect_error) {
+                die("Error de conexión: " . $this->conection->connect_error);
+            }
+
+            $this->conection->set_charset("utf8");
+            return $this->conection;
+	    }
+
+            public function connection() {
+            return $this->conection;
+        }
+    }
+    
+    $db = new Db();
+    $conexion = $db->connection();
+?>
