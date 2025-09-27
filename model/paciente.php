@@ -2,7 +2,7 @@
 
 class Paciente{
 
-    private string $id;
+    private int $id;
     private string $nombre;
     private string $apellido;
     private string $fecha_nacimiento;
@@ -11,7 +11,7 @@ class Paciente{
     private string $motivo_consulta;
 
         public function __construct
-            (string $id, 
+            (int $id, 
             string $nombre, 
             string $apellido, 
             string $fecha_nacimiento, 
@@ -32,7 +32,7 @@ class Paciente{
 
     // Metodos Gets
 
-        public function getId(): string {
+        public function getId(): int {
             return $this->id;
         }
         
@@ -63,7 +63,7 @@ class Paciente{
 
     //Metodos Sets
 
-        public function setId(string $id): void {
+        public function setId(int $id): void {
             $this->id = $id;
         }
 
@@ -135,6 +135,5 @@ class Paciente{
         }
 
 }
-
 
 ?>
