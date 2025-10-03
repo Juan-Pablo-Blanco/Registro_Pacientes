@@ -17,9 +17,15 @@ $conexion = $db->connection();
 
 // Vistas
 require_once 'view/templates/header.php';
- 
+require_once 'controller/paciente.php';
+$controlador = new PacienteController($conexion);
+$pacientes = $controlador->list();
 
-require_once 'view/templates/formulario.php';
+foreach ($pacientes as $paciente) {
+    echo "<pre>" . $paciente->mostrarInformacion() . "</pre>";
+}
+
+// require_once 'view/templates/formulario.php';
 
 require_once 'view/templates/footer.php';
 

@@ -16,7 +16,7 @@ class Paciente{
             string $apellido, 
             string $fecha_nacimiento, 
             int $telefono, 
-            string $motivo_consulta,
+            ?string $motivo_consulta = null,
             ?string $adulto_responsable = null) 
 
         {
@@ -26,7 +26,7 @@ class Paciente{
             $this->apellido = $apellido;
             $this->fecha_nacimiento = $fecha_nacimiento;
             $this->telefono = $telefono;
-            $this->motivo_consulta = $motivo_consulta;
+            $this->motivo_consulta = $motivo_consulta ?? '';
             $this->adulto_responsable = $adulto_responsable;
         }
 

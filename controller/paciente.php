@@ -32,8 +32,8 @@ class PacienteController {
                     $row['apellido'],
                     $row['fecha_nacimiento'],
                     $row['telefono'],
-                    $row['motivo_consulta'],
-                    $row['adulto_responsable']
+                    $row['adulto_responsable'],
+                    $row['motivo_consulta']
                 );
             }
         }
